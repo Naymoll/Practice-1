@@ -1,4 +1,4 @@
-double fast_pow(double value, unsigned int pow)
+double my_pow(double value, unsigned int pow)
 {
    double result = 1;
 	while (pow) 
