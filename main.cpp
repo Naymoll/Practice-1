@@ -1,10 +1,14 @@
-double my_pow(double value, unsigned int pow)
+double fast_pow(double value, unsigned int pow)
 {
-    double result = 1.0;
-    for (unsigned int i = 0; i < pow; i++)
+   double result = 1;
+	while (pow) 
     {
-        result *= value;
-    }
+		if (pow % 2 == 1)
+            result *= value;
+		
+        value *= value;
+		pow /= 2;
+	}
 
-    return result;
+	return result;
 }
