@@ -1,22 +1,14 @@
 double my_pow(double value, int pow)
 {
-    int lhs, rhs;
-    if (pow < 0) 
+   double result = 1;
+	while (pow) 
     {
-        lhs = pow; 
-        rhs = 0;
-    }
-    else 
-    {
-        lhs = 0; 
-        rhs = pow;
-    }
-    
-    double result = 1.0;
-    for (int i = lhs; i < rhs; i++)
-    {
-        result *= value;
-    }
+		if (pow % 2 == 1)
+            result *= value;
+		
+        value *= value;
+		pow /= 2;
+	}
 
-    return pow < 0 ? (1 / result) : result;
+	return result;
 }
